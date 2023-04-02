@@ -5,7 +5,7 @@ export default function CompletedList(props) {
         {props.todos.map((TodoNote, id) => (
           <li 
             key={id}
-            style={{ textDecoration: TodoNote.completed ? "line-through" : "none"}} 
+            style={{textDecoration: TodoNote.completed ? "line-through" : "none"}} 
             onClick={() => props.completedNote(id)}>
             {TodoNote.text}
           </li>

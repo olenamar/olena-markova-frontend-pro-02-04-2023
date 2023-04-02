@@ -1,13 +1,13 @@
 import { React, useState } from "react";
 import AddNode from "./AddNode";
-import CompletedList  from "./CompletedList"
+import CompletedList  from "./CompletedList";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
   const [TodoNote, setTodoNote] = useState("");
 
   const addNoteTodo = () => {
-    if (TodoNote !== "") {
+    if(TodoNote !== "") {
       setTodos([...todos, {text: TodoNote, completed: false}]);
       setTodoNote("");
     }
@@ -23,7 +23,7 @@ export default function TodoList() {
     <div className="container">
       <h1>My to-do list</h1>
       <CompletedList todos={todos} completedNote={completedNote}></CompletedList>
-      <AddNode TodoNote={TodoNote} addNoteTodo ={addNoteTodo} setTodoNote={setTodoNote}></AddNode>
+      <AddNode TodoNote={TodoNote} addNoteTodo={addNoteTodo} setTodoNote={setTodoNote}></AddNode>
     </div>
   );
 }
