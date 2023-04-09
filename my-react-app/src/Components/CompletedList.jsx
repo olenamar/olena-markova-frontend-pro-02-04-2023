@@ -2,12 +2,12 @@ export default function CompletedList(props) {
   return(
     <div className="compl_ul">
       <ul>
-        {props.todos.map((TodoNote, id) => (
+        {props.todos.map((todoNote, index) => (
           <li 
-            key={id}
-            style={{textDecoration: TodoNote.completed ? "line-through" : "none"}} 
-            onClick={() => props.completedNote(id)}>
-            {TodoNote.text}
+            key={index}
+            style={{textDecoration: todoNote.completed ? "line-through" : "none"}} 
+            onClick={() => props.completedNote(index)}>
+            {todoNote.text}
           </li>
         ))}
       </ul>

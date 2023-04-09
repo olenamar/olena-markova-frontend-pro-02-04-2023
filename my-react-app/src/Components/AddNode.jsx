@@ -3,7 +3,7 @@ export default function TodoList(props) {
     <div className="input_node">
       <input 
         type="text" 
-        value={props.TodoNote} 
+        value={props.todoNote} 
         placeholder="Added a node" 
         onChange={(e) => props.setTodoNote(e.target.value)}>
       </input>

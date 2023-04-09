@@ -4,18 +4,18 @@ import CompletedList  from "./CompletedList";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
-  const [TodoNote, setTodoNote] = useState("");
+  const [todoNote, setTodoNote] = useState("");
 
   const addNoteTodo = () => {
-    if(TodoNote !== "") {
-      setTodos([...todos, {text: TodoNote, completed: false}]);
+    if(todoNote !== ""){
+      setTodos([...todos, {text: todoNote, completed: false}]);
       setTodoNote("");
     }
   };
 
-  const completedNote = (id) => {
+  const completedNote = (index) => {
     const completedTodos = [...todos];
-    completedTodos[id].completed = !completedTodos[id].completed;
+    completedTodos[index].completed = !completedTodos[index].completed;
     setTodos(completedTodos);
   };
 
@@ -23,7 +23,7 @@ export default function TodoList() {
     <div className="container">
       <h1>My to-do list</h1>
       <CompletedList todos={todos} completedNote={completedNote}></CompletedList>
-      <AddNode TodoNote={TodoNote} addNoteTodo={addNoteTodo} setTodoNote={setTodoNote}></AddNode>
+      <AddNode todoNote={todoNote} addNoteTodo={addNoteTodo} setTodoNote={setTodoNote}></AddNode>
     </div>
   );
 }
